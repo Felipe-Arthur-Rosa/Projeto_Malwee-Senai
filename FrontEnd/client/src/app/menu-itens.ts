@@ -1,5 +1,5 @@
-import { ClientComponent } from "./client/client.component";
-import { CollectionComponent } from "./collection/collection.component";
+import { ClientComponent } from "./standart_pags/client/client.component";
+import { CollectionComponent } from "./standart_pags/collection/collection.component";
 import { GroupComponent } from "./group/group.component";
 import { ProductComponent } from "./product/product.component";
 import { SubGroupComponent } from "./sub-group/sub-group.component";

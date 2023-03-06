@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ObserverService } from 'src/services/observer.service';
-import { MenuItens } from '../menu-itens';
+import { MenuItens } from '../../menu-itens';
 
 @Component({
   selector: 'app-menu',

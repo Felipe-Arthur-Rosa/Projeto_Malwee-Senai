@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/services/http.service';
 import {MatDialog} from '@angular/material/dialog';
 import { QuestionService } from 'src/services/question.service';
-import { SubGroupModalComponent } from '../sub-group-modal/sub-group-modal.component';
-import { EditSubGroupComponent } from '../edit-sub-group/edit-sub-group.component';
+import { SubGroupModalComponent } from '../modals/sub-group-modal/sub-group-modal.component';
+import { EditSubGroupComponent } from '../edits_pags/edit-sub-group/edit-sub-group.component';
 // import { FormUtils } from '../Utils/formutils';
 
 @Component({

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 
 import { QuestionService } from 'src/services/question.service';
-import { SubGroupModalComponent } from '../sub-group-modal/sub-group-modal.component';
+import { SubGroupModalComponent } from '../modals/sub-group-modal/sub-group-modal.component';
 import { ProductModalComponent } from '../product-modal/product-modal.component';
 import { EditProductComponent } from '../edit-product/edit-product.component';
 
