@@ -1,18 +1,34 @@
 
 
 services:
-  mysql-db:
+  database:
     image: mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - malwee-network
+      
   backend:
     image: node:19-alpine
-    restart: always
+    working_dir: /app
+    command: "node index.js"
+    volumes:
+      - ./backend:/app
+    networks:
+      - malwee-network
+    environment:
+      - DB_SERVER=database
+      - DB_DATABASE=malwee
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_PORT=3000
     depends_on:
-      - mysql-db
-    build:
-      context: ./BackEnd/server
-      dockerfile: Dockerfile
+      - database
     ports:
       - 3000:3000
+
+networks:
+  malwee-network:
+    driver: bridge
+  
