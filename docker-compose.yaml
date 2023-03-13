@@ -1,0 +1,18 @@
+
+
+services:
+  mysql-db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  backend:
+    image: node:19-alpine
+    restart: always
+    depends_on:
+      - mysql-db
+    build:
+      context: ./BackEnd/server
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
