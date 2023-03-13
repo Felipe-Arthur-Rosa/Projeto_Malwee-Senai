@@ -2,3 +2,6 @@
 **/*dist
 **/*.vscode
 **/*.angular
+
+# Ignore buffers
+**/*/*#
