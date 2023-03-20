@@ -9,7 +9,8 @@ knl.post('user', async(req, resp) => {
         name : Joi.string().min(1).max(100).required(),
         username : Joi.string().min(1).max(100).required(),
         password : Joi.string().min(6).max(16).required(),
-        cpassword : Joi.string().min(6).max(16).required()
+        cpassword : Joi.string().min(6).max(16).required(),
+        roles : Joi.number().min(1).max(11).required()
     })
 
     knl.validate(req.body, schema);
@@ -27,6 +28,7 @@ knl.post('user', async(req, resp) => {
         name : req.body.name,
         username : req.body.username,
         password : md5(req.body.password),
+        roles : req.body.roles,
         status   : 1
     });
 
@@ -83,7 +85,8 @@ knl.put('user', async(req, resp) => {
     const result = await knl.sequelize().models.Usuario.update({
         name : req.body.name,
         username : req.body.username,
-        password : md5(req.body.password)
+        password : md5(req.body.password),
+        roles : req.body.roles,
     }, 
     {
         where : {

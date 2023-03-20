@@ -8,6 +8,10 @@ module.exports = (sequelize) => {
             autoIncrement : true,
             allowNull : false
         },
+        roles : {
+            type : Sequelize.INTEGER(11),
+            allowNull : false
+        },
         name : {
             type : Sequelize.STRING(100),
             allowNull : false,

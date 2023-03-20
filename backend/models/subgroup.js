@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
             allowNull : false
         },
         fkgroup : {
-            type : Sequelize.STRING(100),
+            type : Sequelize.INTEGER(100),
             allowNull : false
         }
     })
