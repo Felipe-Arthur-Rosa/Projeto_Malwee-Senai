@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditCollectionComponent } from 'src/app/edits_pags/edit-collection/edit-collection.component';
+import { CollectionModalComponent } from 'src/app/modals/collection-modal/collection-modal.component';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
-import { CollectionModalComponent } from '../collection-modal/collection-modal.component';
-import { EditCollectionComponent } from '../edit-collection/edit-collection.component';
+
 
 @Component({
   selector: 'app-collection',

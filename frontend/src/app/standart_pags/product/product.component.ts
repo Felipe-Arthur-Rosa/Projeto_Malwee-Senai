@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditProductComponent } from 'src/app/edits_pags/edit-product/edit-product.component';
+import { ProductModalComponent } from 'src/app/modals/product-modal/product-modal.component';
 import { HttpService } from 'src/services/http.service';
 
 import { QuestionService } from 'src/services/question.service';
-import { SubGroupModalComponent } from '../modals/sub-group-modal/sub-group-modal.component';
-import { ProductModalComponent } from '../product-modal/product-modal.component';
-import { EditProductComponent } from '../edit-product/edit-product.component';
+
 
 @Component({
   selector: 'app-product',

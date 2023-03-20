@@ -1,9 +1,10 @@
 import { ClientComponent } from "./standart_pags/client/client.component";
 import { CollectionComponent } from "./standart_pags/collection/collection.component";
-import { GroupComponent } from "./group/group.component";
-import { ProductComponent } from "./product/product.component";
-import { SubGroupComponent } from "./sub-group/sub-group.component";
-import { UserComponent } from "./user/user.component";
+import { GroupComponent } from "./standart_pags/group/group.component";
+import { ProductComponent } from "./standart_pags/product/product.component";
+import { SubGroupComponent } from "./standart_pags/sub-group/sub-group.component";
+import { UserComponent } from "./standart_pags/user/user.component";
+
 
 export const MenuItens = [
     {

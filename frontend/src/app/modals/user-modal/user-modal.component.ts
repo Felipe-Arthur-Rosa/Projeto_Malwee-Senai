@@ -13,11 +13,12 @@ export class UserModalComponent implements OnInit {
   username : string = '';
   password : string = '';
   cpassword : string = '';
+  roles : number = 0;
 
   ngOnInit(): void {
   }
 
   public async add(){
-    await this.httpService.post('user', {name : this.name, username : this.username, password : this.password, cpassword : this.cpassword});
+    await this.httpService.post('user', {name : this.name, username : this.username, password : this.password, cpassword : this.cpassword, roles : this.roles});
   }
 }

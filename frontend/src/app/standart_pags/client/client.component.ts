@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ClientModalComponent } from 'src/app/modals/client-modal/client-modal.component';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
 import { ClientAdressComponent } from '../../modals/client-adress/client-adress.component';
-import { EditClientComponent } from '../edit-client/edit-client.component';
-import { ClientModalComponent } from '../client-modal/client-modal.component';
+
 
 
 @Component({

@@ -1,9 +1,10 @@
 import { Component, OnInit,  } from '@angular/core';  //AfterViewInit
 import { HttpService } from 'src/services/http.service';
 import {MatDialog} from '@angular/material/dialog';
-import { GroupModalComponent } from '../group-modal/group-modal.component';
 import { QuestionService } from 'src/services/question.service';
-import { EditGroupComponent } from '../edit-group/edit-group.component';
+import { GroupModalComponent } from 'src/app/modals/group-modal/group-modal.component';
+import { EditGroupComponent } from 'src/app/edits_pags/edit-group/edit-group.component';
+
 // import { FormUtils } from '../Utils/formutils';
 
 

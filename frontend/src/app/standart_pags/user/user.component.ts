@@ -3,8 +3,9 @@ import { HttpService } from 'src/services/http.service';
 import {MatDialog} from '@angular/material/dialog';
 
 import { QuestionService } from 'src/services/question.service';
-import { UserModalComponent } from '../user-modal/user-modal.component';
-import { EditUserComponent } from '../edit-user/edit-user.component';
+import { UserModalComponent } from 'src/app/modals/user-modal/user-modal.component';
+import { EditUserComponent } from 'src/app/edits_pags/edit-user/edit-user.component';
+
 
 @Component({
   selector: 'app-user',

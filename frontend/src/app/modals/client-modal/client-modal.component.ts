@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.component';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
-import { EditAdressComponent } from '../edit-adress/edit-adress.component';
 
 @Component({
   selector: 'app-client-modal',

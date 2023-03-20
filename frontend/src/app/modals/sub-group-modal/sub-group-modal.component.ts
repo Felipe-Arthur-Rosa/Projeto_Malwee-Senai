@@ -12,8 +12,8 @@ export class SubGroupModalComponent implements OnInit {
   subgroupname = '';
   descriptiongroup : string = '';
   id = 0
-  selectedGroup : string = '';
-  fkgroup : string = '';
+  selectedGroup = 0;
+  fkgroup : number = 0;
 
   public subgroups: Array<any> = [];
   public groups: Array<any> = [];
@@ -27,7 +27,7 @@ export class SubGroupModalComponent implements OnInit {
 
   public async add(){
     console.log(this.selectedGroup);
-    await this.httpService.post('subgroup', {fkgroup : this.descriptiongroup, description :this.description});
+    await this.httpService.post('subgroup', {fkgroup : this.selectedGroup, description :this.description});
   }
 
   public async found() {
