@@ -4,72 +4,70 @@ const knl = require("../knl");
 const securityConsts = require("../consts/security-consts");
 const { Op } = require("sequelize");
 
-knl.post(
-  "user_client",
-  async (req, resp) => {
-    const schema = Joi.object({
-      name: Joi.string().min(1).max(100).required(),
-      username: Joi.string().min(1).max(100).required(),
-      password: Joi.string().min(6).max(16).required(),
-      cpassword: Joi.string().min(6).max(16).required(),
-    });
 
-    knl.validate(value, schema);
-
-    const result = await knl.sequelize().models.Usuario.findAll({
-      where: {
-        username: req.body.username,
-      },
-    });
-
-    knl.createException("0006", "", !knl.objects.isEmptyArray(result));
-    knl.createException("0007", "", req.body.password != req.body.cpassword);
-
-    const user = knl.sequelize().models.Usuario.build({
-      name: req.body.name,
-      username: req.body.username,
-      password: md5(req.body.password),
-      roles: 4,
-      status: 1,
-    });
-
-    await user.save();
-    resp.end();
-  },
-  securityConsts.USER_TYPE_PUBLIC
-);
-
-knl.post("user", async (req, resp) => {
+knl.post('user_client', async(req, resp) => {
   const schema = Joi.object({
-    name: Joi.string().min(1).max(100).required(),
-    username: Joi.string().min(1).max(100).required(),
-    password: Joi.string().min(6).max(16).required(),
-    cpassword: Joi.string().min(6).max(16).required(),
-    roles: Joi.number().min(1).max(11).required(),
-  });
+      name : Joi.string().min(1).max(100).required(),
+      username : Joi.string().min(1).max(100).required(),
+      password : Joi.string().min(6).max(16).required(),
+      cpassword : Joi.string().min(6).max(16).required(),
+  })
 
-  knl.validate(value, schema);
+  knl.validate(req.body, schema);
 
   const result = await knl.sequelize().models.Usuario.findAll({
-    where: {
-      username: req.body.username,
-    },
+      where : {
+          username : req.body.username
+      }
   });
 
-  knl.createException("0006", "", !knl.objects.isEmptyArray(result));
-  knl.createException("0007", "", req.body.password != req.body.cpassword);
+  knl.createException('0006', '', !knl.objects.isEmptyArray(result));
+  knl.createException('0007', '', req.body.password != req.body.cpassword);
 
   const user = knl.sequelize().models.Usuario.build({
-    name: req.body.name,
-    username: req.body.username,
-    password: md5(req.body.password),
-    roles: req.body.roles,
-    status: 1,
+      name : req.body.name,
+      username : req.body.username,
+      password : md5(req.body.password),
+      rules : 4,
+      status   : 1
   });
 
   await user.save();
   resp.end();
-});
+}, securityConsts.USER_TYPE_PUBLIC)
+
+knl.post('user', async(req, resp) => {
+  const schema = Joi.object({
+      name : Joi.string().min(1).max(100).required(),
+      username : Joi.string().min(1).max(100).required(),
+      password : Joi.string().min(6).max(16).required(),
+      cpassword : Joi.string().min(6).max(16).required(),
+      rules : Joi.number().required(),
+  })
+
+  knl.validate(req.body, schema);
+
+  const result = await knl.sequelize().models.Usuario.findAll({
+      where : {
+          username : req.body.username
+      }
+  });
+
+  knl.createException('0006', '', !knl.objects.isEmptyArray(result));
+  knl.createException('0007', '', req.body.password != req.body.cpassword);
+
+  const user = knl.sequelize().models.Usuario.build({
+      name : req.body.name,
+      username : req.body.username,
+      password : md5(req.body.password),
+      rules : req.body.rules,
+      status   : 1
+  });
+
+  await user.save();
+  resp.end();
+}, securityConsts.USER_TYPE_PUBLIC)
+
 
 knl.get("user", async (req, resp) => {
   const result = await knl.sequelize().models.Usuario.findAll({
