@@ -40,6 +40,7 @@ import { EditUserComponent } from 'src/app/edits_pags/edit-user/edit-user.compon
 import { EditCollectionComponent } from 'src/app/edits_pags/edit-collection/edit-collection.component';
 import { ClientAdressComponent } from './modals/client-adress/client-adress.component';
 import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.component';
+import { RegisterClientComponent } from './modals/register-client/register-client.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.
     EditCollectionComponent,
     ClientAdressComponent,
     EditAdressComponent,
+    RegisterClientComponent,
   ],
   imports: [
     RoutesModule,
