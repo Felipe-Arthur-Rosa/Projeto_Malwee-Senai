@@ -10,7 +10,7 @@ export const MenuItens = [
         path: 'group',
         caption : 'Grupos',
         icon : 'person',
-        rule : [4],
+        rule : [1],
         component: GroupComponent,
     },
     {
@@ -25,7 +25,7 @@ export const MenuItens = [
         path: 'product',
         caption : 'Produtos',
         icon : 'shopping_basket',
-        rule : [4],
+        rule : [1],
         component: ProductComponent,
     },
     {
@@ -33,19 +33,20 @@ export const MenuItens = [
         caption : 'Usuário',
         icon : 'assignment_ind',
         component: UserComponent,
-        rule : [4],
+        rule : [1],
     },
     {
         path: 'collection',
         caption : 'Coleção',
         icon : 'assessment',
+        rule : [1],
         component: CollectionComponent,
     },
     {
         path: 'client',
         caption : 'Cliente',
         icon : 'face',
-        rule : [4],
+        rule : [1],
         component: ClientComponent,
     }
 ]
