@@ -25,11 +25,12 @@ export class LoginComponent implements OnInit {
 
   public login(){
     this.HttpClient.post('http://localhost:3006/logon', {username : this.username, password : this.password}).toPromise().then((response : any)=> {
-      console.log(response);
+      console.log(response.user);
+      
       if(response.token){
         this.isLogin = true;
         window.localStorage.setItem('token', response.token);
-        
+        window.localStorage.setItem('rule', response.user.rules);
         this.router.navigateByUrl('');
         console.log("Logado");
       }
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
   
   public openModal(){
     const dialog = this.dialog.open(RegisterClientComponent, {
-      width: '450px'
+      width: '450px',
     });
 }
 }

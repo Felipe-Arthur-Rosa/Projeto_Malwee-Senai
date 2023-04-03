@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   opened = true;
   subscription : any = null;
   menu : Array<any> = [];
+  rule : any = window.localStorage.getItem('rule')
 
   constructor(private observer : ObserverService, private router : Router) { 
     this.menu = MenuItens;

@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
             allowNull : false
         },
         rules : {
-            type : Sequelize.INTEGER(),
+            type : Sequelize.STRING(),
             allowNull : false
         },
         status : {

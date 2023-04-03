@@ -17,7 +17,7 @@ export class GroupModalComponent implements OnInit {
   constructor(private httpService : HttpService, public dialog: MatDialog, httpClient : HttpClient) { }
 
   ngOnInit(): void {
-
+    
   }
 
   public async add(){
