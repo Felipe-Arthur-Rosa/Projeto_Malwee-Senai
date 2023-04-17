@@ -11,7 +11,7 @@ import { MenuItens } from '../../menu-itens';
 export class MenuComponent implements OnInit, OnDestroy {
   opened = true;
   subscription : any = null;
-  menu : Array<any> = [];
+  menu : Array<any> = [];                              
   rule : any = window.localStorage.getItem('rule')
 
   constructor(private observer : ObserverService, private router : Router) { 
