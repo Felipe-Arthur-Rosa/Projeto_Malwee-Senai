@@ -1,5 +1,5 @@
 <app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
 
 <table>
   <th>ID</th>
@@ -8,7 +8,7 @@
   <th>Editar</th>
   <th>Excluir</th>
     <tr *ngFor="let subgroup of subgroups">
-      <td>{{subgroup.id}} </td>
+      <td>{{subgroup.id}}</td>
       <td>{{subgroup.fkgroup}} </td>
       <td>{{subgroup.description}} </td>
       <td><button  class="BTedit" (click)="openModalEdit(subgroup)"><mat-icon>edit</mat-icon>	</button></td>

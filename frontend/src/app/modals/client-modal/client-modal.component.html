@@ -15,7 +15,7 @@
       </mat-tab>
        <mat-tab label="Endereço" > 
          <div class="edittab">
-           <app-input [label]="'Pesquisa'" [(ngModel)]="filterTerm"></app-input>
+           <app-input class="app-input" [label]="'Pesquisa'" [(ngModel)]="filterTerm" ></app-input>
            <button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
            <table>  
            <th>ID</th>
@@ -42,7 +42,7 @@
      </mat-tab-group>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-button>Cancelar</button>
+    <button mat-button (click)="closeModal()">Cancelar</button>
     <button mat-button (click)="save()">Salvar</button>
   </mat-card-actions>
 </mat-card>
