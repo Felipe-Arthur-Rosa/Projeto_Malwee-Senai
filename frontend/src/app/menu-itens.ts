@@ -1,3 +1,4 @@
+import { CalcularFreteComponent } from "./standart_pags/calcular-frete/calcular-frete.component";
 import { ClientComponent } from "./standart_pags/client/client.component";
 import { CollectionComponent } from "./standart_pags/collection/collection.component";
 import { GroupComponent } from "./standart_pags/group/group.component";
@@ -48,5 +49,12 @@ export const MenuItens = [
         icon : 'face',
         rule : [1],
         component: ClientComponent,
+    },
+    {
+        path: 'calcular frete',
+        caption : 'Calcular Frete',
+        icon : 'my_location',
+        rule : [1]||[2]||[3],
+        component: CalcularFreteComponent,
     }
 ]

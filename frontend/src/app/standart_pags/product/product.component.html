@@ -1,8 +1,5 @@
 <app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm"></app-input>
 <button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
-
-
-
 <table>
   <th>ID</th>
   <th>Grupo</th> 
@@ -16,7 +13,7 @@
       <td class="Id">{{product.id}} </td>
       <td>{{product.fkgroup}} </td>
       <td>{{product.description}} </td>
-      <td>R$ {{product.price}} </td>
+      <td>{{product.price | currency : 'BRL'}} </td>
       <td>{{product.fksubgroup}} </td>
       <td>{{product.fkcollection }} </td>
       <td class="editAnddelete"><button class="BTedit" (click)="openModalEdit(product)"><mat-icon>edit</mat-icon>	</button></td>

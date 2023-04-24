@@ -1,0 +1,14 @@
+<app-input [label]="'Pesquisa'"(input)="list()" [(ngModel)]="filterTerm"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
+<table>
+    <th>ID</th>
+    <th>Produto</th>
+    <th>Desconto</th>
+    <th>Total</th>
+    <tr *ngFor="let product of frete ">
+        <td>{{product.id}}</td>
+        <td>{{product.fkProduct}}</td>
+        <td>{{product.porcent}}%</td>
+        <td>{{product.price | currency : 'BRL'}}</td>
+    </tr>
+</table>

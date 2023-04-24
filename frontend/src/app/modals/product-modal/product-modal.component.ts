@@ -10,6 +10,7 @@ import { runInThisContext } from 'vm';
 })
 export class ProductModalComponent implements OnInit {
 // ==========================GRUPO==============================
+  products: Array <any>=[];
   description : string = '';
   price: string = '';
   id = 0
@@ -38,7 +39,7 @@ export class ProductModalComponent implements OnInit {
 
   public async add(){
     console.log(this.selectedGroup);
-    await this.httpService.post('product', {fksubgroup : this.selectedSubGroup, fkcollection : this.selectedCollection, fkgroup : this.selectedGroup, description :this.description, price :this.price});
+    this.products =  await this.httpService.post('product', {fksubgroup : this.selectedSubGroup, fkcollection : this.selectedCollection, fkgroup : this.selectedGroup, description :this.description, price :this.price});
   }
 
   public async found() {

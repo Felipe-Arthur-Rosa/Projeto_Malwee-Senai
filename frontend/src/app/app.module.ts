@@ -41,6 +41,9 @@ import { EditCollectionComponent } from 'src/app/edits_pags/edit-collection/edit
 import { ClientAdressComponent } from './modals/client-adress/client-adress.component';
 import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.component';
 import { RegisterClientComponent } from './modals/register-client/register-client.component';
+import { CalcularFreteModalComponent } from './modals/calcular-frete-modal/calcular-frete-modal.component';
+import { CalcularFreteComponent } from './standart_pags/calcular-frete/calcular-frete.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 export function loadCrucialData() {
   return function() {
@@ -89,6 +92,8 @@ export function delay(delay: number) {
     ClientAdressComponent,
     EditAdressComponent,
     RegisterClientComponent,
+    CalcularFreteComponent,
+    CalcularFreteModalComponent,
   ],
   imports: [
     RoutesModule,
@@ -100,7 +105,7 @@ export function delay(delay: number) {
     MaterialModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInputModule
   ],
   exports : [
     RouterModule
