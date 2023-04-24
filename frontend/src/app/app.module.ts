@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BlockUIModule } from 'ng-block-ui';
@@ -41,6 +41,21 @@ import { EditCollectionComponent } from 'src/app/edits_pags/edit-collection/edit
 import { ClientAdressComponent } from './modals/client-adress/client-adress.component';
 import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.component';
 import { RegisterClientComponent } from './modals/register-client/register-client.component';
+
+export function loadCrucialData() {
+  return function() {
+    // or use UserService
+    return delay(3000);
+  }
+}
+
+export function delay(delay: number) {
+  return function() {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, delay);
+    });
+  }
+}
 
 @NgModule({
   declarations: [
@@ -85,13 +100,19 @@ import { RegisterClientComponent } from './modals/register-client/register-clien
     MaterialModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   exports : [
     RouterModule
   ],
   providers: [
-    QuestionService
+    {
+      provide : APP_INITIALIZER,
+      multi: true,
+      useFactory: loadCrucialData()
+    },
+    QuestionService,
+    
   ],
   bootstrap: [AppComponent]
 })

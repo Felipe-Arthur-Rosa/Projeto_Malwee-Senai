@@ -6,10 +6,10 @@
   <th>Editar</th>
   <th>Excluir</th>
     <tr *ngFor="let collection of collections">
-      <td>{{collection.id}} </td>
+      <td class="Id">{{collection.id}} </td>
       <td>{{collection.description}} </td>
-      <td><button  class="BTedit" (click)="openModalEdit(collection)"><mat-icon>edit</mat-icon>	</button></td>
-      <td> <button class="BTdelet"(click)="deleteCollection(collection.id)"><mat-icon>delete</mat-icon></button></td>
+      <td class="editAnddelete"><button  class="BTedit" (click)="openModalEdit(collection)"><mat-icon>edit</mat-icon>	</button></td>
+      <td class="editAnddelete"><button class="BTdelet"(click)="deleteCollection(collection.id)"><mat-icon>delete</mat-icon></button></td>
     </tr>
 </table>
 

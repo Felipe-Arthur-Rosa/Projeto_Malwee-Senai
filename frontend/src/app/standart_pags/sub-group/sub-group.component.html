@@ -8,11 +8,11 @@
   <th>Editar</th>
   <th>Excluir</th>
     <tr *ngFor="let subgroup of subgroups">
-      <td>{{subgroup.id}}</td>
+      <td class="Id">{{subgroup.id}}</td>
       <td>{{subgroup.fkgroup}} </td>
       <td>{{subgroup.description}} </td>
-      <td><button  class="BTedit" (click)="openModalEdit(subgroup)"><mat-icon>edit</mat-icon>	</button></td>
-      <td> <button class="BTdelet"(click)="deleteSubGroup(subgroup.id)"><mat-icon>delete</mat-icon></button></td>
+      <td class="editAnddelete"><button  class="BTedit" (click)="openModalEdit(subgroup)"><mat-icon>edit</mat-icon>	</button></td>
+      <td class="editAnddelete"> <button class="BTdelet"(click)="deleteSubGroup(subgroup.id)"><mat-icon>delete</mat-icon></button></td>
     </tr>
 </table>
 

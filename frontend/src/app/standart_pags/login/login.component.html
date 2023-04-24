@@ -1,9 +1,8 @@
 <mat-card class="sombra">
     <mat-card-header>
-        <img cImg rounded src="assets/img/logoIDTN.png">
+        <h1 style="text-align: center;">INTÉGRATION DE LA TECHNOLOGIE NUMÉRIQUE</h1>
+        <!-- <img cImg rounded src="assets/img/logoIDTN.png" > -->
     </mat-card-header>
-    <br>
-    <h1><b>IDTN</b></h1>
     <mat-card-content>
             <mat-form-field appearance="fill">
                 <mat-label><b>Usuário</b></mat-label>
@@ -13,7 +12,7 @@
         <mat-card-content>
             <mat-form-field appearance="fill">
                 <mat-label><b>Senha</b></mat-label>
-                <input matInput placeholder="Senha"  [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+                <input  matInput placeholder="Senha"  [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>

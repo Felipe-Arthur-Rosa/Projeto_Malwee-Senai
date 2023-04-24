@@ -1,5 +1,8 @@
-<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
+<mat-card-content>
+  <app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
+  <button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
+</mat-card-content>
+
 <table>
   <th>ID</th>
   <th>Grupo</th> 
@@ -7,9 +10,9 @@
   <th>Excluir</th>
 
     <tr *ngFor="let group of groups">
-      <td>{{group.id}} </td>
+      <td class="Id">{{group.id}} </td>
       <td>{{group.description}} </td>
-      <td><button  class="BTedit" (click)="openModalEdit(group)"><mat-icon>edit</mat-icon>	</button></td>
-      <td> <button class="BTdelet"(click)="deleteGroup(group.id)"><mat-icon>delete</mat-icon></button></td>
+      <td class="editAnddelete"><button  class="BTedit" (click)="openModalEdit(group)"><mat-icon>edit</mat-icon>	</button></td>
+      <td class="editAnddelete"><button class="BTdelet"(click)="deleteGroup(group.id)"><mat-icon>delete</mat-icon></button></td>
     </tr>
 </table>
