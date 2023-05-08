@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditCalcularFreteComponent } from 'src/app/edits_pags/edit-calcular-frete/edit-calcular-frete.component';
 import { CalcularFreteModalComponent } from 'src/app/modals/calcular-frete-modal/calcular-frete-modal.component';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
@@ -12,6 +13,7 @@ import { QuestionService } from 'src/services/question.service';
 export class CalcularFreteComponent implements OnInit { 
   frete : Array<any> = [];
   product : Array<any> = [];
+  products: Array<any> = [];
   filterTerm : string = '';
 
   constructor(private httpService : HttpService, public dialog: MatDialog, private question: QuestionService) { }
@@ -23,15 +25,7 @@ export class CalcularFreteComponent implements OnInit {
   public async list(){
     this.frete = await this.httpService.get('delivery');
     if (this.filterTerm.length > 0){
-      this.frete = await this.httpService.get('delivery' + this.filterTerm);
-      
-    }
-  }
-
-  public async list2(){
-    this.product = await this.httpService.get('product');
-    if (this.filterTerm.length > 0){
-      this.product = await this.httpService.get('product' + this.filterTerm);
+      this.frete = await this.httpService.get('deliverysearch/' + this.filterTerm);
       
     }
   }
@@ -45,4 +39,23 @@ export class CalcularFreteComponent implements OnInit {
       
     })
   }
+
+  public openCalcularFreteModalEdit(product : any){
+    const dialog = this.dialog.open(EditCalcularFreteComponent, {
+      width : 'auto', height : 'auto',
+      data  : {id : product.id}
+    });
+
+    dialog.afterClosed().subscribe((result : any) => {
+      this.list();
+    })
+  }
+
+  public async deleteFrete(id : number){
+    this.question.ask(async () => {
+      await this.httpService.patch('delivery', {id});
+      console.log(Response);
+      this.list();
+    })
+    } 
 }

@@ -40,6 +40,7 @@ export class ProductModalComponent implements OnInit {
   public async add(){
     console.log(this.selectedGroup);
     this.products =  await this.httpService.post('product', {fksubgroup : this.selectedSubGroup, fkcollection : this.selectedCollection, fkgroup : this.selectedGroup, description :this.description, price :this.price});
+  
   }
 
   public async found() {
