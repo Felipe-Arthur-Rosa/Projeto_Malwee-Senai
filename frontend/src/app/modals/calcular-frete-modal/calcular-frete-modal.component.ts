@@ -33,6 +33,7 @@ export class CalcularFreteModalComponent implements OnInit {
 
   async ngOnInit() {
     this.product = await this.httpService.get('product');
+    this.frete = await this.httpService.get('delivery');
   }
 
      async calculaTotal(){
@@ -42,6 +43,7 @@ export class CalcularFreteModalComponent implements OnInit {
       }
   
     async addFrete(){
+      
       this.frete = await this.httpService.post('delivery', {fkProduct : this.selectedProduct, price : this.totalProduct2, porcent : this.desconto})
     }
 

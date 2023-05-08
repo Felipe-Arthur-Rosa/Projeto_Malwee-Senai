@@ -1,0 +1,21 @@
+<app-basicmodal [title]="'Editar Frete'" (save)="change()">
+        <app-dropdown [array]="product" [title]="'Selecione um produto'" [(ngModel)]="selectedProduct" style="margin-right: 10px;"></app-dropdown>
+        <br>
+        <mat-form-field class="example-50-width " style="margin-right: 10px;">
+            <mat-label>Quantidade</mat-label>
+            <input matInput type="number" [(ngModel)]="quantity" min="1" max="1000" (blur)="calculaTotal()" >
+        </mat-form-field>
+        <mat-form-field class="example-50-width ">
+            <mat-label>Valor do produto</mat-label>
+              <input matInput  [(ngModel)]="valorUnitario" (blur)="calculaTotal()" >
+          </mat-form-field>
+          <br>
+        <mat-form-field class="example-50-width " style="margin-right: 10px;">
+            <mat-label>Desconto</mat-label>
+            <input matInput [(ngModel)]="desconto" type="number" min="0" max="100000" (blur)="calculaTotal()" >
+        </mat-form-field>
+        <mat-form-field class="example-50-width ">
+            <mat-label>Total</mat-label>
+            <input matInput [(ngModel)]="totalProduct2" minlength="4" maxlength="10000000" (blur)="calculaTotal()" >
+        </mat-form-field>
+</app-basicmodal>

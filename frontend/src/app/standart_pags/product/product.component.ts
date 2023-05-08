@@ -25,6 +25,10 @@ export class ProductComponent implements OnInit {
 
   public async list(){
     this.products = await this.httpService.get('product');
+    if (this.filterTerm.length > 0){
+      this.products = await this.httpService.get('productsearch/' + this.filterTerm);
+      console.log(this.products)
+    }
   }
 
   public openModal(){
