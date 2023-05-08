@@ -43,7 +43,6 @@ import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.
 import { RegisterClientComponent } from './modals/register-client/register-client.component';
 import { CalcularFreteModalComponent } from './modals/calcular-frete-modal/calcular-frete-modal.component';
 import { CalcularFreteComponent } from './standart_pags/calcular-frete/calcular-frete.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 export function loadCrucialData() {
   return function() {
