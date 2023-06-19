@@ -4,8 +4,8 @@ mat-card-header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 160px;
-	width: 530px;
+	height: 150px;
+	width: 500px;
 }
 mat-card-header img{
 	border-radius: 500px;
@@ -17,7 +17,7 @@ mat-card-header img{
 
 mat-card {
     max-width: 35rem;
-    margin: 5rem auto;
+    margin: 6rem auto;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -39,7 +39,7 @@ mat-card-content{
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px rgb(24, 137, 137) inset;
+    -webkit-box-shadow: 0 0 0 30px rgb(135, 198, 222) inset;
 }
 }
 
@@ -50,7 +50,7 @@ input:-webkit-autofill:active{
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: monospace;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 17px;
 	padding: 15px 30px;
 	text-decoration: none;
@@ -67,7 +67,7 @@ input:-webkit-autofill:active{
 
 .sombra{
     // box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-	background-color: darkcyan;
+	background-color: rgb(135, 206, 235);
 }
 
 .btn-secundary {
@@ -77,7 +77,7 @@ input:-webkit-autofill:active{
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
-	font-family:monospace;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size:13px;
 	padding:10px 15px;
 	text-decoration:none;
@@ -85,7 +85,7 @@ input:-webkit-autofill:active{
 	margin-bottom: 10px;
 }
 .btn-secundary:hover {
-	background-color:darkcyan;
+	background-color:skyblue;
 }
 .btn-secundary:active {
 	position:relative;

@@ -14,9 +14,9 @@ import { MaterialModule } from './material.module';
 import { RoutesModule } from './routes.module';
 import { GroupComponent } from 'src/app/standart_pags/group/group.component';
 import { UserComponent } from 'src/app/standart_pags/user/user.component';
-import { HttpClientModule } from '@angular/common/http';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { GroupModalComponent } from 'src/app/modals/group-modal/group-modal.component';
 import { BasicmodalComponent } from './components/basicmodal/basicmodal.component';
 import { InputComponent } from 'src/app/components/input/input.component';
@@ -44,19 +44,22 @@ import { RegisterClientComponent } from './modals/register-client/register-clien
 import { CalcularFreteModalComponent } from './modals/calcular-frete-modal/calcular-frete-modal.component';
 import { CalcularFreteComponent } from './standart_pags/calcular-frete/calcular-frete.component';
 import { EditCalcularFreteComponent } from './edits_pags/edit-calcular-frete/edit-calcular-frete.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 export function loadCrucialData() {
-  return function() {
+  return function () {
     // or use UserService
-    return delay(3000);
+    return delay(2000);
   }
 }
 
 export function delay(delay: number) {
-  return function() {
-    return new Promise(function(resolve) {
-        setTimeout(resolve, delay);
+  return function () {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, delay);
     });
   }
 }
@@ -96,6 +99,8 @@ export function delay(delay: number) {
     CalcularFreteComponent,
     CalcularFreteModalComponent,
     EditCalcularFreteComponent,
+    SplashScreenComponent,
+    LoaderComponent,
   ],
   imports: [
     RoutesModule,
@@ -107,19 +112,21 @@ export function delay(delay: number) {
     MaterialModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    
   ],
-  exports : [
+  exports: [
     RouterModule
   ],
   providers: [
+    MatDialogRef,
     {
-      provide : APP_INITIALIZER,
+      provide: APP_INITIALIZER,
       multi: true,
       useFactory: loadCrucialData()
     },
     QuestionService,
-    
+
   ],
   bootstrap: [AppComponent]
 })

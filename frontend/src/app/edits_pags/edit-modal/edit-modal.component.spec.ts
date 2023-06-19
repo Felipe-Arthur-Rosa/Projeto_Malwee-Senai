@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditModalComponent } from './edit-modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 describe('EditModalComponent', () => {
   let component: EditModalComponent;
@@ -8,7 +10,14 @@ describe('EditModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditModalComponent ]
+      declarations: [ EditModalComponent ],
+      imports : [HttpClientModule, MatDialogModule],
+      providers: [
+        {
+          provide : MAT_DIALOG_DATA,
+          useValue : {}
+        }
+      ]
     })
     .compileComponents();
   });

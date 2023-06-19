@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditCollectionComponent } from './edit-collection.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 describe('EditCollectionComponent', () => {
   let component: EditCollectionComponent;
@@ -8,7 +10,14 @@ describe('EditCollectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditCollectionComponent ]
+      declarations: [ EditCollectionComponent ],
+      imports : [HttpClientModule, MatDialogModule],
+      providers: [
+        {
+          provide : MAT_DIALOG_DATA,
+          useValue : {}
+        }
+      ]
     })
     .compileComponents();
   });

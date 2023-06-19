@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditCalcularFreteComponent } from './edit-calcular-frete.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 describe('EditCalcularFreteComponent', () => {
   let component: EditCalcularFreteComponent;
@@ -8,7 +10,14 @@ describe('EditCalcularFreteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditCalcularFreteComponent ]
+      declarations: [ EditCalcularFreteComponent ],
+      imports : [HttpClientModule, MatDialogModule],
+      providers: [
+        {
+          provide : MAT_DIALOG_DATA,
+          useValue : {}
+        }
+      ]
     })
     .compileComponents();
   });

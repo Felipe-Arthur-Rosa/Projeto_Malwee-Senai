@@ -1,12 +1,14 @@
 <app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>add</mat-icon></button>
+<button class="Bt" mat-stroked-button (click)="openModal()" style="background: skyblue; border: none;"><mat-icon>add</mat-icon></button>
 <table>
+  <th></th>
   <th>ID</th>
   <th>Rules</th>
   <th>Usuario</th> 
   <th>Editar</th>
   <th>Excluir</th>
     <tr *ngFor="let user of users">
+      <td style="width: 50px;"><mat-icon>person</mat-icon></td>
       <td class="Id">{{user.id}} </td>
       <td>{{user.rules}}</td>
       <td>{{user.name}} </td>

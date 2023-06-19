@@ -14,6 +14,7 @@
   <app-root>
       <style type="text/css">
         body, html {
+          background: skyblue;
           height: 100%;
           min-width: 80%;
         }
@@ -28,14 +29,14 @@
   
         .logo {
           border-radius: 205px;
-          width: 180px;
-          height: 180px;
+          width: 220px;
+          height: 220px;
         }
       
         .app-loading .spinner {
-          height: 250px;
-          width: 250px;
-          animation: rotate 4s linear infinite;
+          height: 310px;
+          width: 310px;
+          animation: rotate 5s linear infinite;
           transform-origin: center center;
           position: absolute;
           top: -90px;
@@ -47,12 +48,11 @@
   
         .app-loading .spinner .path {
           stroke-dasharray: 1, 200;
-          stroke-dashoffset: 0;
+          stroke-dashoffset: 1;
           animation: dash 1.5s ease-in-out infinite;
           stroke-linecap: round;
-          stroke: rgb(95, 164, 191);
-          opacity: 0.6;
-          
+          stroke: rgba(4, 76, 117, 0.379);
+          opacity: 1;
         }
   
         @keyframes rotate {
@@ -87,7 +87,7 @@
           <br>
           <br>
           <div class="name">
-            <h1 style="font-size: 28px;">Carregando a página</h1>
+            <h1 style="font-size: 35px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Carregando</h1>
           </div>
         </div>
       </my-app>
