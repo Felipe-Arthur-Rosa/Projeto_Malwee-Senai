@@ -32,7 +32,7 @@ knl.post('delivery', async (req, resp) => {
 
     await description.save();
     resp.end();
-}, securityConsts.USER_TYPE_PUBLIC)
+}, )
 
 knl.get('delivery', async (req, resp) => {
     const result = await knl.sequelize().models.delivery.findAll({

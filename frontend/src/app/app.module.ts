@@ -43,11 +43,14 @@ import { EditAdressComponent } from 'src/app/edits_pags/edit-adress/edit-adress.
 import { RegisterClientComponent } from './modals/register-client/register-client.component';
 import { CalcularFreteModalComponent } from './modals/calcular-frete-modal/calcular-frete-modal.component';
 import { CalcularFreteComponent } from './standart_pags/calcular-frete/calcular-frete.component';
+<<<<<<< HEAD
+=======
 import { EditCalcularFreteComponent } from './edits_pags/edit-calcular-frete/edit-calcular-frete.component';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MatDialogRef } from '@angular/material/dialog';
 
+>>>>>>> e169f60bd5f5957ee2a46e57c4ea240c974634e2
 
 export function loadCrucialData() {
   return function () {
